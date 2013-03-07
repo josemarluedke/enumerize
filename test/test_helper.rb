@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/spec'
 require 'active_support/core_ext/kernel/reporting'
+require 'active_model'
 
 $VERBOSE=true
 
@@ -8,6 +9,14 @@ module SimpleForm
   module Rails
     def self.env
       ActiveSupport::StringInquirer.new("test")
+    end
+  end
+end
+
+module Formtastic
+  module Rails
+    module VERSION
+      MAJOR = 4
     end
   end
 end
